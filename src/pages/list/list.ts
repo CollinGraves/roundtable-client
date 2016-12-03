@@ -4,17 +4,21 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { ItemDetailsPage } from '../item-details/item-details';
 
+import { RoundtableProvider } from '../../providers/roundtable-provider/roundtable-provider';
+
 
 @Component({
   selector: 'page-list',
-  templateUrl: 'list.html'
+  templateUrl: 'list.html',
+  providers: [RoundtableProvider]
 })
 export class ListPage {
+  roundtables: any;
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public roundtableProvider: RoundtableProvider) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
@@ -29,6 +33,14 @@ export class ListPage {
         icon: this.icons[Math.floor(Math.random() * this.icons.length)]
       });
     }
+  }
+
+  ngOnInit() {
+    this.loadRoundtables();
+  }
+
+  loadRoundtables() {
+    this.roundtableProvider.load();
   }
 
   itemTapped(event, item) {

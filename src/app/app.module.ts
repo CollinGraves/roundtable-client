@@ -5,6 +5,8 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { NewLinkPage} from '../pages/new-link/new-link';
+import { RoundtableProvider } from '../providers/roundtable-provider/roundtable-provider';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,6 @@ import { NewLinkPage} from '../pages/new-link/new-link';
     ListPage,
     NewLinkPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, RoundtableProvider]
 })
 export class AppModule {}
