@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Roundtable</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-fab right bottom>
+    <button ion-fab color="light"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="newLink()"><ion-icon name="link"></ion-icon></button>
+      <!-- <button ion-fab (click)="newDoc()"><ion-icon name="document"></ion-icon></button> -->
+      <!-- <button ion-fab (click)="newVideo()"><ion-icon name="videocam"></ion-icon></button> -->
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
